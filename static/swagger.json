@@ -1,0 +1,75 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "AI model that predict diabetes",
+    "version": "1.0.0",
+    "title": "Diabetes Prediction",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/license/MIT"
+    }
+  },
+  "servers": [{
+    "url": "/"
+  }],
+  "tags": [{
+      "name": "my_details",
+      "description": "My Details has my information"
+    },
+    {
+      "name": "Predict",
+      "description": "It will predict the person has diabetes or not"
+    }
+  ],
+  "schema": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/my_details": {
+      "get": {
+        "tags": [
+          "my_details"
+        ],
+        "summary": "Get my information",
+        "description": "",
+        "operationId": "myInfo",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/predict": {
+      "post": {
+        "tags": [
+          "Predict"
+        ],
+        "summary": "Predict diabetes",
+        "description": "",
+        "operationId": "predict",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [{
+          "in": "body",
+          "name": "body",
+          "description": "Pet object that needs to be added to the store",
+          "required": true
+        }],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    }
+  }
+}
